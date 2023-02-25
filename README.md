@@ -3,7 +3,7 @@
 <h3 align="center">Vite 4.0 Vue 3.2 SQLite App</h3>
 <p align="center"><strong><code>vite-vue-sqlite-app</code></strong></p>
 <p align="center">Vite 4.0 Vue 3.2 application demonstrating the use of the</p>
-<p align="center"><strong><code>@capacitor-community/sqlite plugin</code></strong></p>
+<p align="center"><a href="https://github.com/capacitor-community/sqlite"><strong><code>@capacitor-community/sqlite-plugin</code></strong></a></p>
 <br>
 <p align="center"><strong><code>this app uses Capacitor 4</code></strong></p>
 <br>
