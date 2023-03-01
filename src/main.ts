@@ -4,9 +4,9 @@ import App from './App.vue';
 import { Capacitor } from '@capacitor/core';
 import { CapacitorSQLite, SQLiteConnection, SQLiteDBConnection } from '@capacitor-community/sqlite';
 import { JeepSqlite } from 'jeep-sqlite/dist/components/jeep-sqlite';
+//import { applyPolyfills, defineCustomElements } from 'jeep-sqlite/loader';
 
 customElements.define('jeep-sqlite', JeepSqlite);
-
 window.addEventListener('DOMContentLoaded', async () => {
     const platform = Capacitor.getPlatform();
     const sqlite = new SQLiteConnection(CapacitorSQLite)
