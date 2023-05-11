@@ -7,18 +7,24 @@ import { JeepSqlite } from 'jeep-sqlite/dist/components/jeep-sqlite';
 //import { applyPolyfills, defineCustomElements } from 'jeep-sqlite/loader';
 
 customElements.define('jeep-sqlite', JeepSqlite);
+console.log(`after customElements.define`);
+
 window.addEventListener('DOMContentLoaded', async () => {
     const platform = Capacitor.getPlatform();
     const sqlite = new SQLiteConnection(CapacitorSQLite)
-    const app = createApp(App)
     try {
+        console.log(`platform: ${platform}`);
+
         if(platform === "web") {
           // Create the 'jeep-sqlite' Stencil component
-          const jeepSqlite = document.createElement('jeep-sqlite');
-          document.body.appendChild(jeepSqlite);
+          const jeepSqliteEl = document.createElement('jeep-sqlite');
+          document.body.appendChild(jeepSqliteEl);
           await customElements.whenDefined('jeep-sqlite');
+          console.log(`after customElements.whenDefined`)
+
           // Initialize the Web store
           await sqlite.initWebStore();
+          console.log(`after initWebStore`)
         } 
         // here you can initialize some database schema if required
 
@@ -32,6 +38,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             db = await sqlite.createConnection("db_vite", false, "no-encryption", 1, false);
         }
         await db.open();
+        console.log(`db: db_vite opened`);
         const query = `
         CREATE TABLE IF NOT EXISTS test (
         id INTEGER PRIMARY KEY NOT NULL,
@@ -39,6 +46,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         );
         `
         const res = await db.execute(query);
+        console.log(`res: ${JSON.stringify(res)}`);
         if(res.changes && res.changes.changes && res.changes.changes < 0) {
         throw new Error(`Error: execute failed`);
         }

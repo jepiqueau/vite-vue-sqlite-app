@@ -1,7 +1,7 @@
 {
   "name": "vite-vue-sqlite-app",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "Vite/Vue SQLite Application",
   "author": "Jean Pierre Quéau",
@@ -20,18 +20,17 @@
     "electron:install": "cd electron && npm install && cd ..",
     "electron:prepare": "npm run remove:sql:wasm && npm run build && npx cap sync @capacitor-community/electron && npx cap copy @capacitor-community/electron",
     "electron:start": "npm run electron:prepare && cd electron && npm run electron:start"
-
   },
   "dependencies": {
     "@capacitor-community/electron": "^4.1.2",
-    "@capacitor-community/sqlite": "^4.6.2",
-    "@capacitor/android": "^4.6.2",
-    "@capacitor/core": "^4.6.2",
-    "@capacitor/ios": "^4.6.2",
-    "vue": "^3.2.45"
+    "@capacitor-community/sqlite": "^4.8.0-1",
+    "@capacitor/android": "^4.8.0",
+    "@capacitor/core": "^4.8.0",
+    "@capacitor/ios": "^4.8.0",
+    "vue": "^3.2.47"
   },
   "devDependencies": {
-    "@capacitor/cli": "^4.6.2",
+    "@capacitor/cli": "^4.8.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "copyfiles": "^2.4.1",
     "rimraf": "^4.1.2",
@@ -46,5 +45,4 @@
   "bugs": {
     "url": "https://github.com/jepiqueau/vite-vue-sqlite-app.git/issues"
   }
-
 }
